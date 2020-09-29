@@ -19,7 +19,7 @@
       ]
     },
     {
-      "src": "/cotacao",
+      "src": "/cotation",
       "dest": "/index.js",
       "methods": [
         "GET"

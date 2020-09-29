@@ -5,7 +5,7 @@ Convert My money is a simple project that convert dolars in reais
 ## Installation
 
 npm install express EJS
-
+npm install --save-dev jest
 
 
 

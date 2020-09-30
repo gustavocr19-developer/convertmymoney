@@ -3,6 +3,7 @@ const app = express()
 const path = require('path')
 
 const convert = require('./lib/convert')
+const api_bcb = require('./lib/api-bcb')
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
@@ -16,8 +17,12 @@ app.listen(3000, err => {
   }
 })
 
-app.get('/', (req, res) => {
-  res.render('home')
+app.get('/', async (req, res) => {
+  const cotacao = await api_bcb.getCotacao()
+
+  res.render('home', {
+    cotacao
+  })
 })
 
 app.get('/cotation', (req, res) => {
